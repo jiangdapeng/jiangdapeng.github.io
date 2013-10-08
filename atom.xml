@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Life of Hacker and Painter]]></title>
+  <title><![CDATA[Life of Asuwill]]></title>
   <link href="http://jiangdapeng.github.io/atom.xml" rel="self"/>
   <link href="http://jiangdapeng.github.io/"/>
-  <updated>2013-10-08T15:13:17+08:00</updated>
+  <updated>2013-10-08T15:32:15+08:00</updated>
   <id>http://jiangdapeng.github.io/</id>
   <author>
     <name><![CDATA[Asuwill]]></name>
