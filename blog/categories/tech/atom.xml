@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Life of Hacker and Painter]]></title>
-  <link href="http://jiangdapeng.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: tech | Life of Hacker and Painter]]></title>
+  <link href="http://jiangdapeng.github.io/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://jiangdapeng.github.io/"/>
   <updated>2013-10-08T14:30:09+08:00</updated>
   <id>http://jiangdapeng.github.io/</id>
@@ -22,27 +22,27 @@
 
 <h1>这是 H1</h1>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\# 这是 H1</span></code></pre></td></tr></table></div></figure>
-
+<p><code>
+\# 这是 H1
+</code></p>
 
 <h2>这是 H2</h2>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\## 这是 H2</span></code></pre></td></tr></table></div></figure>
-
+<p><code>
+\## 这是 H2
+</code></p>
 
 <h3>这是 H3</h3>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\### 这是 H3</span></code></pre></td></tr></table></div></figure>
-
+<p><code>
+\### 这是 H3
+</code></p>
 
 <h4>这是 H4</h4>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\#### 这是 H4</span></code></pre></td></tr></table></div></figure>
-
+<p><code>
+\#### 这是 H4
+</code></p>
 
 <h2>区块引用</h2>
 
@@ -97,15 +97,6 @@
 </code></pre>
 
 <h2>区段元素</h2>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[江大鹏的第一篇博客]]></title>
-    <link href="http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog/"/>
-    <updated>2013-10-07T20:12:00+08:00</updated>
-    <id>http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
