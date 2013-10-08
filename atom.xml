@@ -4,7 +4,7 @@
   <title><![CDATA[Life of Asuwill]]></title>
   <link href="http://jiangdapeng.github.io/atom.xml" rel="self"/>
   <link href="http://jiangdapeng.github.io/"/>
-  <updated>2013-10-08T16:18:30+08:00</updated>
+  <updated>2013-10-08T16:56:49+08:00</updated>
   <id>http://jiangdapeng.github.io/</id>
   <author>
     <name><![CDATA[Asuwill]]></name>
@@ -97,6 +97,9 @@
 </code></pre>
 
 <h2>区段元素</h2>
+
+<p class='post-footer'>原文地址：<a href='http://jiangdapeng.github.io/blog/2013/10/08/markdown-syntax/'>http://jiangdapeng.github.io/blog/2013/10/08/markdown-syntax/</a><br/>Written by <a href='http://jiangdapeng.github.io'>Asuwill</a>&nbsp;posted at <a href='http://jiangdapeng.github.io'>http://jiangdapeng.github.io</a><br/>版权声明：自由转载-非商用-非衍生-保持署名|<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
 ]]></content>
   </entry>
   
@@ -105,7 +108,8 @@
     <link href="http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog/"/>
     <updated>2013-10-07T20:12:00+08:00</updated>
     <id>http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p class='post-footer'>原文地址：<a href='http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog/'>http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog/</a><br/>Written by <a href='http://jiangdapeng.github.io'>Asuwill</a>&nbsp;posted at <a href='http://jiangdapeng.github.io'>http://jiangdapeng.github.io</a><br/>版权声明：自由转载-非商用-非衍生-保持署名|<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
 ]]></content>
   </entry>
   
