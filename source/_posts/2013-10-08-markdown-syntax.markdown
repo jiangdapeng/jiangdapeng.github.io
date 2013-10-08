@@ -3,7 +3,8 @@ layout: post
 title: "markdown 常用语法"
 date: 2013-10-08 09:44
 comments: true
-categories: 
+categories: tech
+tags: markdown
 ---
 ## 标题
 # 这是 H1
