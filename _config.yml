@@ -4,7 +4,7 @@
 
 url: http://jiangdapeng.github.io
 title: Life of Hacker and Painter
-subtitle: 
+subtitle: 眼高于天 脚踏实地
 author: Asuwill
 simple_search: http://google.com/search
 description:
@@ -98,3 +98,6 @@ google_analytics_tracking_id:
 
 # Facebook Like
 facebook_like: false
+
+# comment and share
+comment_and_share: true
