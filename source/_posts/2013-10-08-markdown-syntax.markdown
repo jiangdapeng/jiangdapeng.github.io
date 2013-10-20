@@ -4,8 +4,16 @@ title: "markdown 常用语法"
 date: 2013-10-08 09:44
 comments: true
 categories: tech
-tags: markdown
+tags: [markdown, pat]
 ---
+#前言
+## 为什么我会出现在标签 pat 下
+说起来，是因为，我写第一篇pat题解，用 `bundle exec rake generate` 的时候，报错了
+
+> Liquid Exception: comparison of Array with Array failed in page
+
+Google 了一下，有人说是“每个tag都只使用一次的时候”，这个问题就会出现。我测试了一下，还果真是如此，为了暂时解决这个问题，我只好把pat标签在这篇post里也应用一下了。
+
 ## 标题
 # 这是 H1
 ``` 
@@ -62,4 +70,5 @@ tags: markdown
 	这是代码块（行首4个空格或者1个制表符）
 
 ## 区段元素
+
 
