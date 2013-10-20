@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: tech | Life of Asuwill]]></title>
-  <link href="http://jiangdapeng.github.io/blog/categories/tech/atom.xml" rel="self"/>
+  <title><![CDATA[Tag: pat | Life of Asuwill]]></title>
+  <link href="http://jiangdapeng.github.io/tags/pat/atom.xml" rel="self"/>
   <link href="http://jiangdapeng.github.io/"/>
   <updated>2013-10-20T13:50:10+08:00</updated>
   <id>http://jiangdapeng.github.io/</id>

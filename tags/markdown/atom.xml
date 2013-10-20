@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: markdown | Life of Asuwill]]></title>
   <link href="http://jiangdapeng.github.io/tags/markdown/atom.xml" rel="self"/>
   <link href="http://jiangdapeng.github.io/"/>
-  <updated>2013-10-08T16:56:49+08:00</updated>
+  <updated>2013-10-20T13:50:10+08:00</updated>
   <id>http://jiangdapeng.github.io/</id>
   <author>
     <name><![CDATA[Asuwill]]></name>
@@ -18,7 +18,17 @@
     <link href="http://jiangdapeng.github.io/blog/2013/10/08/markdown-syntax/"/>
     <updated>2013-10-08T09:44:00+08:00</updated>
     <id>http://jiangdapeng.github.io/blog/2013/10/08/markdown-syntax</id>
-    <content type="html"><![CDATA[<h2>标题</h2>
+    <content type="html"><![CDATA[<h1>前言</h1>
+
+<h2>为什么我会出现在标签 pat 下</h2>
+
+<p>说起来，是因为，我写第一篇pat题解，用 <code>bundle exec rake generate</code> 的时候，报错了</p>
+
+<blockquote><p>Liquid Exception: comparison of Array with Array failed in page</p></blockquote>
+
+<p>Google 了一下，有人说是“每个tag都只使用一次的时候”，这个问题就会出现。我测试了一下，还果真是如此，为了暂时解决这个问题，我只好把pat标签在这篇post里也应用一下了。</p>
+
+<h2>标题</h2>
 
 <h1>这是 H1</h1>
 

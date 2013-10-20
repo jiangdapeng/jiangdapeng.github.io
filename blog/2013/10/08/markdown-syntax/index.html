@@ -9,12 +9,7 @@
   <meta name="author" content="Asuwill">
 
   
-  <meta name="description" content="标题 这是 H1 1
-\# 这是 H1 这是 H2 1
-\## 这是 H2 这是 H3 1
-\### 这是 H3 这是 H4 1
-\#### 这是 H4 区块引用 区块引用1 区块引用2 回到引用1 这是一个标题 列表1
-列表2 给出一些例子代码： return shell_exec(&ldquo &hellip;">
+  <meta name="description" content="前言 为什么我会出现在标签 pat 下 说起来，是因为，我写第一篇pat题解，用 bundle exec rake generate 的时候，报错了 Liquid Exception: comparison of Array with Array failed in page Google 了一下 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -98,7 +93,17 @@
   </header>
 
 
-<div class="entry-content"><h2>标题</h2>
+<div class="entry-content"><h1>前言</h1>
+
+<h2>为什么我会出现在标签 pat 下</h2>
+
+<p>说起来，是因为，我写第一篇pat题解，用 <code>bundle exec rake generate</code> 的时候，报错了</p>
+
+<blockquote><p>Liquid Exception: comparison of Array with Array failed in page</p></blockquote>
+
+<p>Google 了一下，有人说是“每个tag都只使用一次的时候”，这个问题就会出现。我测试了一下，还果真是如此，为了暂时解决这个问题，我只好把pat标签在这篇post里也应用一下了。</p>
+
+<h2>标题</h2>
 
 <h1>这是 H1</h1>
 
@@ -218,6 +223,8 @@
         <a class="basic-alignment left" href="/blog/2013/10/07/first-octopress-blog/" title="Previous Post: 江大鹏的第一篇博客">&laquo; 江大鹏的第一篇博客</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013/10/20/pat-1001-1010-solutions/" title="Next Post: PAT 1001-1010 题解">PAT 1001-1010 题解 &raquo;</a>
+      
     </p>
     
       <div class="sharing">
@@ -268,6 +275,10 @@ var jiathis_config = {data_track_clickback:'true'};
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/20/pat-1001-1010-solutions/">PAT 1001-1010 题解</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/10/08/markdown-syntax/">markdown 常用语法</a>
       </li>
     
@@ -284,7 +295,8 @@ var jiathis_config = {data_track_clickback:'true'};
 <section>
   <h1>标签云</h1>
   <ul class="tag-cloud">
-    <a style="font-size: NaN%" href="/tags/markdown/">markdown</a>
+    <a style="font-size: 70%" href="/tags/markdown/">markdown</a>
+<a style="font-size: 180%" href="/tags/pat/">pat</a>
 
   </ul>
 </section>

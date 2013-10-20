@@ -1,24 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Life of Asuwill]]></title>
-  <link href="http://jiangdapeng.github.io/atom.xml" rel="self"/>
-  <link href="http://jiangdapeng.github.io/"/>
-  <updated>2013-10-20T13:50:10+08:00</updated>
-  <id>http://jiangdapeng.github.io/</id>
-  <author>
-    <name><![CDATA[Asuwill]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>PAT 1001-1010 题解 - Life of Asuwill</title>
+  <meta name="author" content="Asuwill">
 
   
-  <entry>
-    <title type="html"><![CDATA[PAT 1001-1010 题解]]></title>
-    <link href="http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions/"/>
-    <updated>2013-10-20T09:45:00+08:00</updated>
-    <id>http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions</id>
-    <content type="html"><![CDATA[<h2>前言</h2>
+  <meta name="description" content="前言 PAT 是浙江大学搞出来的一个编程（Programming）能力（Ability）测试（Test），在姥姥的大力推广下，目前也逐渐走上了正道，详细介绍可以直接到官网查看 http://pat.zju.edu.cn/ 我断断续续也将上面的题目做得差不多了，想来也应该总结一下，算是给自己一个交代 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Life of Asuwill" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Life of Asuwill</a></h1>
+  
+    <h2>main=0</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jiangdapeng.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/categories/tech/">技术</a></li>
+  <li><a href="/blog/categories/life/">生活</a></li>
+  <li><a href="/blog/categories/random/">梦游</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">PAT 1001-1010 题解</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-20T09:45:00+08:00" pubdate data-updated="true">Oct 20<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>前言</h2>
 
 <p>PAT 是浙江大学搞出来的一个编程（<strong>P</strong>rogramming）能力（<strong>A</strong>bility）测试（<strong>T</strong>est），在姥姥的大力推广下，目前也逐渐走上了正道，详细介绍可以直接到官网查看 <a href="http://pat.zju.edu.cn/" title="PAT官方网站">http://pat.zju.edu.cn/</a></p>
 
@@ -229,117 +304,154 @@
 <p><code>nearest_city</code>，可以通过<code>priority_queue</code>最小堆实现，我当时用了线性遍历查找，因为测试数据小，也能过。</p>
 
 <p>完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1003.%20Emergency%20(25).cpp" title="1003">请戳我</a><p class='post-footer'>原文地址：<a href='http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions/'><a href="http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions/">http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions/</a></a><br/>Written by <a href='http://jiangdapeng.github.io'>Asuwill</a>&nbsp;posted at <a href='http://jiangdapeng.github.io'><a href="http://jiangdapeng.github.io">http://jiangdapeng.github.io</a></a><br/>版权声明：自由转载-非商用-非衍生-保持署名|<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p></p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[markdown 常用语法]]></title>
-    <link href="http://jiangdapeng.github.io/blog/2013/10/08/markdown-syntax/"/>
-    <updated>2013-10-08T09:44:00+08:00</updated>
-    <id>http://jiangdapeng.github.io/blog/2013/10/08/markdown-syntax</id>
-    <content type="html"><![CDATA[<h1>前言</h1>
 
-<h2>为什么我会出现在标签 pat 下</h2>
+<span class="byline author vcard">Posted by <span class="fn">Asuwill</span></span>
 
-<p>说起来，是因为，我写第一篇pat题解，用 <code>bundle exec rake generate</code> 的时候，报错了</p>
-
-<blockquote><p>Liquid Exception: comparison of Array with Array failed in page</p></blockquote>
-
-<p>Google 了一下，有人说是“每个tag都只使用一次的时候”，这个问题就会出现。我测试了一下，还果真是如此，为了暂时解决这个问题，我只好把pat标签在这篇post里也应用一下了。</p>
-
-<h2>标题</h2>
-
-<h1>这是 H1</h1>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\# 这是 H1</span></code></pre></td></tr></table></div></figure>
+      
 
 
-<h2>这是 H2</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\## 这是 H2</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>这是 H3</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\### 这是 H3</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>这是 H4</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\#### 这是 H4</span></code></pre></td></tr></table></div></figure>
 
 
-<h2>区块引用</h2>
-
-<blockquote><p>区块引用1</p>
-
-<blockquote><p>区块引用2</p></blockquote>
-
-<p>回到引用1</p>
-
-<h2>这是一个标题</h2>
-
-<ol>
-<li>列表1</li>
-<li>列表2</li>
-</ol>
-
-
-<p>给出一些例子代码：</p>
-
-<p>  return shell_exec(&ldquo;echo $input | $markdown_script&rdquo;);</p></blockquote>
-
-<h2>列表</h2>
-
-<h3>无序列表</h3>
-
-<ul>
-<li>师叔</li>
-<li>师太</li>
-<li>春哥</li>
-<li>马老师</li>
-<li>主席</li>
-<li>女王大人</li>
-<li>亲王大人</li>
-</ul>
-
-
-<h3>有序列表</h3>
-
-<ol>
-<li>师叔女人1号</li>
-<li>师叔女人2号</li>
-<li>师叔女人3号</li>
-<li>。。。</li>
-</ol>
-
-
-<h2>代码区块</h2>
-
-<p>这是普通的段落</p>
-
-<pre><code>这是代码块（行首4个空格或者1个制表符）
-</code></pre>
-
-<h2>区段元素</h2>
-
-<p class='post-footer'>原文地址：<a href='http://jiangdapeng.github.io/blog/2013/10/08/markdown-syntax/'>http://jiangdapeng.github.io/blog/2013/10/08/markdown-syntax/</a><br/>Written by <a href='http://jiangdapeng.github.io'>Asuwill</a>&nbsp;posted at <a href='http://jiangdapeng.github.io'>http://jiangdapeng.github.io</a><br/>版权声明：自由转载-非商用-非衍生-保持署名|<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
-
-]]></content>
-  </entry>
   
-  <entry>
-    <title type="html"><![CDATA[江大鹏的第一篇博客]]></title>
-    <link href="http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog/"/>
-    <updated>2013-10-07T20:12:00+08:00</updated>
-    <id>http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog</id>
-    <content type="html"><![CDATA[<p class='post-footer'>原文地址：<a href='http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog/'>http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog/</a><br/>Written by <a href='http://jiangdapeng.github.io'>Asuwill</a>&nbsp;posted at <a href='http://jiangdapeng.github.io'>http://jiangdapeng.github.io</a><br/>版权声明：自由转载-非商用-非衍生-保持署名|<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
 
-]]></content>
-  </entry>
+
+<time datetime="2013-10-20T09:45:00+08:00" pubdate data-updated="true">Oct 20<span>th</span>, 2013</time>
+      
+
+<span class="categories">
   
-</feed>
+    <a class='category' href='/blog/categories/tech/'>tech</a>
+  
+</span>
+
+
+    </p>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/10/08/markdown-syntax/" title="Previous Post: markdown 常用语法">&laquo; markdown 常用语法</a>
+      
+      
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions/" data-via="" data-counturl="http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions/" >Tweet</a>
+  
+  
+  
+  
+    <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share?uid=1849241" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1347964657841494" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<p></p>
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1849241"></script>
+<!-- UY END -->
+  
+</div>
+
+    
+
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>关于博主</h1>
+  <p>想着是风一样的男子，其实是疯男子</p>
+</section>
+<section>
+  <h1>近期文章</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/10/20/pat-1001-1010-solutions/">PAT 1001-1010 题解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/markdown-syntax/">markdown 常用语法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/07/first-octopress-blog/">江大鹏的第一篇博客</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+<section>
+  <h1>标签云</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 70%" href="/tags/markdown/">markdown</a>
+<a style="font-size: 180%" href="/tags/pat/">pat</a>
+
+  </ul>
+</section>
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Asuwill -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  - <span class="credit">Theme by <a href="http://www.gehaxelt.in">Gehaxelt</a></span>
+  <span class="credit">and <a href="http://www.it-solutions-neef.de">IT Solutions Neef</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

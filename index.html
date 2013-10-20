@@ -9,12 +9,7 @@
   <meta name="author" content="Asuwill">
 
   
-  <meta name="description" content="标题 这是 H1 1
-\# 这是 H1 这是 H2 1
-\## 这是 H2 这是 H3 1
-\### 这是 H3 这是 H4 1
-\#### 这是 H4 区块引用 区块引用1 区块引用2 回到引用1 这是一个标题 列表1
-列表2 给出一些例子代码： return shell_exec(&ldquo &hellip;">
+  <meta name="description" content="前言 PAT 是浙江大学搞出来的一个编程（Programming）能力（Ability）测试（Test），在姥姥的大力推广下，目前也逐渐走上了正道，详细介绍可以直接到官网查看 http://pat.zju.edu.cn/ 我断断续续也将上面的题目做得差不多了，想来也应该总结一下，算是给自己一个交代 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +73,252 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/10/20/pat-1001-1010-solutions/">PAT 1001-1010 题解</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-20T09:45:00+08:00" pubdate data-updated="true">Oct 20<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>前言</h2>
+
+<p>PAT 是浙江大学搞出来的一个编程（<strong>P</strong>rogramming）能力（<strong>A</strong>bility）测试（<strong>T</strong>est），在姥姥的大力推广下，目前也逐渐走上了正道，详细介绍可以直接到官网查看 <a href="http://pat.zju.edu.cn/" title="PAT官方网站">http://pat.zju.edu.cn/</a></p>
+
+<p>我断断续续也将上面的题目做得差不多了，想来也应该总结一下，算是给自己一个交代。题解大致的形式将会是每10个（或者少于10个）题目一篇博文，对每个题目而言，会简述题目大意，然后是思路整理，然后是代码链接。我已经完成的题目的代码都在github上，<a href="https://github.com/jiangdapeng/pat" title="pat 源代码">请戳我</a></p>
+
+<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1001" title="1001. A+B Format (20)">1001. A+B Format (20)</a></h2>
+
+<h3>题意</h3>
+
+<p>按照给定的格式输出两个整数的和：即每三位数一组用逗号分隔，例如 <code>999991</code> 就应该输出为 <code>999,991</code></p>
+
+<h3>思路</h3>
+
+<p>简单题，可以将和每次三位取出（即按照<code>1000进制</code>），然后再从高位开始输出即可，注意处理负数，中间合适的位置加上<code>,</code>
+主要代码如下：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="kt">void</span> <span class="n">format</span><span class="p">(</span><span class="kt">int</span>  <span class="n">n</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="kt">bool</span> <span class="n">neg</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">neg</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="n">n</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vi</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">do</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">vi</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">1000</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">n</span> <span class="o">/=</span> <span class="mi">1000</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">!=</span><span class="mi">0</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">neg</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;-&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">vi</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span><span class='line'>  <span class="n">vi</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">vi</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">top</span> <span class="o">=</span> <span class="n">vi</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span><span class='line'>    <span class="n">vi</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;,%03d&quot;</span><span class="p">,</span><span class="n">top</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1001.%20A%2BB%20Format%20(20).cpp" title="1001">请戳我</a></p>
+
+<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1002" title="1002. A+B for Polynomials (25)">1002. A+B for Polynomials (25)</a></h2>
+
+<h3>题意</h3>
+
+<p>求两个多项式的和，<code>a</code> 和 <code>b</code> 都以 <code>K N1 aN1 N2 aN2 ... NK aNK</code>的形式表示，其中 <code>K</code> 表示多项式中中非零项的个数，<code>Ni</code> 和 <code>aNi</code> 分别表示指数和系数</p>
+
+<h3>思路</h3>
+
+<p>类似于归并的思想，从高到低将指数相同的项的系数加起来，如果某指数项只在一个数中有，直接保留在结果里即可，需要注意的是如果系数加起来为0，这一项就不能放进结果。
+核心代码：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'>  <span class="c1">// p1+p1</span>
+</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="n">Poly</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="n">Poly</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">vi1</span> <span class="o">=</span> <span class="n">p1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="n">Poly</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">vi2</span> <span class="o">=</span> <span class="n">p2</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">((</span><span class="n">vi1</span> <span class="o">!=</span> <span class="n">p1</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">vi2</span><span class="o">!=</span> <span class="n">p2</span><span class="p">.</span><span class="n">end</span><span class="p">()))</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">vi1</span><span class="o">-&gt;</span><span class="n">exp</span> <span class="o">==</span> <span class="n">vi2</span><span class="o">-&gt;</span><span class="n">exp</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="n">tmp</span><span class="p">.</span><span class="n">exp</span> <span class="o">=</span> <span class="n">vi1</span><span class="o">-&gt;</span><span class="n">exp</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">tmp</span><span class="p">.</span><span class="n">coe</span> <span class="o">=</span> <span class="n">vi1</span><span class="o">-&gt;</span><span class="n">coe</span> <span class="o">+</span> <span class="n">vi2</span><span class="o">-&gt;</span><span class="n">coe</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">tmp</span><span class="p">.</span><span class="n">coe</span> <span class="o">!=</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>
+</span><span class='line'>      <span class="o">++</span><span class="n">vi1</span><span class="p">;</span>
+</span><span class='line'>      <span class="o">++</span><span class="n">vi2</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">vi1</span><span class="o">-&gt;</span><span class="n">exp</span> <span class="o">&gt;</span> <span class="n">vi2</span><span class="o">-&gt;</span><span class="n">exp</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">*</span><span class="n">vi1</span><span class="p">);</span>
+</span><span class='line'>      <span class="o">++</span><span class="n">vi1</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">else</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">*</span><span class="n">vi2</span><span class="p">);</span>
+</span><span class='line'>      <span class="o">++</span><span class="n">vi2</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="n">vi1</span> <span class="o">!=</span> <span class="n">p1</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">*</span><span class="n">vi1</span><span class="p">);</span>
+</span><span class='line'>    <span class="o">++</span><span class="n">vi1</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="n">vi2</span> <span class="o">!=</span> <span class="n">p2</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">*</span><span class="n">vi2</span><span class="p">);</span>
+</span><span class='line'>    <span class="o">++</span><span class="n">vi2</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1002.%20A%2BB%20for%20Polynomials%20(25).cpp" title="1002">请戳我</a></p>
+
+<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1003" title="pat 1003">1003. Emergency (25)</a></h2>
+
+<h3>题意</h3>
+
+<p>给定城市之间的道路距离，以及每个城市的营救队的人数，求从城市 <code>c1</code> 到 <code>c2</code>的最短路径的条数，以及沿途能够召集的最大人数。</p>
+
+<h3>思路</h3>
+
+<p>典型的最短路径题，采用Dijkstra算法，但是这里不仅仅是找出一条最短路径，而是要计算最短路径的条数，并且需要统计沿途能够召集的最大人数。能够召集的人数没什么问题，只需要在最短路径的基础上加上一个人数的比较，<code>callup[c]</code>表示达到<code>城市c</code>的时候能够召集的最大人数。用<code>count_path[c]</code>表示到达<code>城市c</code>的最短路径的条数。</p>
+
+<ol>
+<li>如果 <code>dist[c] + edge[c,adj] &lt; dist[adj]</code> 则  <code>dist[adj] = dist[c] + edge[c,adj]; count_path[adj] = count_path[c]； callup[adj] = callup[c] + people[adj]</code></li>
+<li>如果 <code>dist[c] + edge[c,adj] == dist[adj]</code> 也就是有多条距离相同的路径到达城市<code>adj</code>，这个时候 <code>count_path[adj] = count_path[adj] + count_path[c]; callup[adj] = max { callup[adj], callup[c] + people[adj] }</code></li>
+</ol>
+
+
+<p>代码结构：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'>  <span class="c1">// start from start city</span>
+</span><span class='line'>  <span class="n">dist</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">count</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="c1">// one shortest path from start to start</span>
+</span><span class='line'>  <span class="n">callup</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="n">start</span><span class="p">];</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">city</span> <span class="o">=</span> <span class="n">nearest_city</span><span class="p">();</span>
+</span><span class='line'>    <span class="n">visited</span><span class="p">[</span><span class="n">city</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">city</span> <span class="o">==</span> <span class="n">end</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">update_neighbor</span><span class="p">(</span><span class="n">city</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>nearest_city</code>，可以通过<code>priority_queue</code>最小堆实现，我当时用了线性遍历查找，因为测试数据小，也能过。</p>
+
+<p>完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1003.%20Emergency%20(25).cpp" title="1003">请戳我</a><p class='post-footer'>原文地址：<a href='http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions/'><a href="http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions/">http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions/</a></a><br/>Written by <a href='http://jiangdapeng.github.io'>Asuwill</a>&nbsp;posted at <a href='http://jiangdapeng.github.io'><a href="http://jiangdapeng.github.io">http://jiangdapeng.github.io</a></a><br/>版权声明：自由转载-非商用-非衍生-保持署名|<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/10/08/markdown-syntax/">Markdown 常用语法</a></h1>
     
     
@@ -101,7 +342,17 @@
   </header>
 
 
-  <div class="entry-content"><h2>标题</h2>
+  <div class="entry-content"><h1>前言</h1>
+
+<h2>为什么我会出现在标签 pat 下</h2>
+
+<p>说起来，是因为，我写第一篇pat题解，用 <code>bundle exec rake generate</code> 的时候，报错了</p>
+
+<blockquote><p>Liquid Exception: comparison of Array with Array failed in page</p></blockquote>
+
+<p>Google 了一下，有人说是“每个tag都只使用一次的时候”，这个问题就会出现。我测试了一下，还果真是如此，为了暂时解决这个问题，我只好把pat标签在这篇post里也应用一下了。</p>
+
+<h2>标题</h2>
 
 <h1>这是 H1</h1>
 
@@ -244,6 +495,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/20/pat-1001-1010-solutions/">PAT 1001-1010 题解</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/10/08/markdown-syntax/">markdown 常用语法</a>
       </li>
     
@@ -260,7 +515,8 @@
 <section>
   <h1>标签云</h1>
   <ul class="tag-cloud">
-    <a style="font-size: NaN%" href="/tags/markdown/">markdown</a>
+    <a style="font-size: 70%" href="/tags/markdown/">markdown</a>
+<a style="font-size: 180%" href="/tags/pat/">pat</a>
 
   </ul>
 </section>
