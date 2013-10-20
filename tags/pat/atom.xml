@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: pat | Life of Asuwill]]></title>
   <link href="http://jiangdapeng.github.io/tags/pat/atom.xml" rel="self"/>
   <link href="http://jiangdapeng.github.io/"/>
-  <updated>2013-10-20T21:04:27+08:00</updated>
+  <updated>2013-10-20T21:14:26+08:00</updated>
   <id>http://jiangdapeng.github.io/</id>
   <author>
     <name><![CDATA[Asuwill]]></name>
@@ -76,6 +76,9 @@ printf(",%03d",top);
 }
 ```
 完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1001.%20A%2BB%20Format%20(20).cpp" title="1001">请戳我</a></p>
+
+<!--more-->
+
 
 <h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1002" title="1002. A+B for Polynomials (25)">1002. A+B for Polynomials (25)</a></h2>
 
