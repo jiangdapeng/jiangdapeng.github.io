@@ -1,0 +1,19 @@
+---
+layout: post
+title: "PAT-1011-1015-题解"
+date: 2013-10-22 21:08
+comments: true
+categories: tech
+tags: [pat]
+---
+
+## [1011. World Cup Betting (20)](http://pat.zju.edu.cn/contests/pat-a-practise/1011 "1011")
+
+### 题意
+
+赌博，怎么猜硬的最多
+
+### 思路
+
+简单题，选出每个比赛投注投哪个盈利最大即可
+
