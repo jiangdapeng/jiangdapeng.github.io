@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: algorithm | Life of Asuwill]]></title>
   <link href="http://jiangdapeng.github.io/tags/algorithm/atom.xml" rel="self"/>
   <link href="http://jiangdapeng.github.io/"/>
-  <updated>2013-10-28T20:59:45+08:00</updated>
+  <updated>2013-10-28T21:02:49+08:00</updated>
   <id>http://jiangdapeng.github.io/</id>
   <author>
     <name><![CDATA[Asuwill]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[基础数据结构与算法——排序]]></title>
-    <link href="http://jiangdapeng.github.io/blog/2013/10/27/basic-data-stuctures-and-algorithms-1/"/>
+    <link href="http://jiangdapeng.github.io/blog/2013/10/27/basic-data-structures-and-algorithms-1/"/>
     <updated>2013-10-27T22:39:00+08:00</updated>
-    <id>http://jiangdapeng.github.io/blog/2013/10/27/basic-data-stuctures-and-algorithms-1</id>
+    <id>http://jiangdapeng.github.io/blog/2013/10/27/basic-data-structures-and-algorithms-1</id>
     <content type="html"><![CDATA[<p>最近几天在重温基础的数据结构和算法，比如基础的排序算法，以及动态规划的应用，也慢慢的在博客上写一个基础的系列吧，作为自己温习的记录。</p>
 
 <h2>排序算法</h2>
