@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: pat | Life of Asuwill]]></title>
   <link href="http://jiangdapeng.github.io/tags/pat/atom.xml" rel="self"/>
   <link href="http://jiangdapeng.github.io/"/>
-  <updated>2013-10-20T22:27:12+08:00</updated>
+  <updated>2013-10-28T20:47:01+08:00</updated>
   <id>http://jiangdapeng.github.io/</id>
   <author>
     <name><![CDATA[Asuwill]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[PAT-1011-1015-题解]]></title>
+    <link href="http://jiangdapeng.github.io/blog/2013/10/22/pat-1011-1015-solutions/"/>
+    <updated>2013-10-22T21:08:00+08:00</updated>
+    <id>http://jiangdapeng.github.io/blog/2013/10/22/pat-1011-1015-solutions</id>
+    <content type="html"><![CDATA[<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1011" title="1011">1011. World Cup Betting (20)</a></h2>
+
+<h3>题意</h3>
+
+<p>赌博，怎么猜硬的最多</p>
+
+<h3>思路</h3>
+
+<p>简单题，选出每个比赛投注投哪个盈利最大即可</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[PAT 1001-1010 题解]]></title>

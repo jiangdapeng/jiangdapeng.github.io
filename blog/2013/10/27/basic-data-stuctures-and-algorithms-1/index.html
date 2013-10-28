@@ -1,24 +1,111 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Life of Asuwill]]></title>
-  <link href="http://jiangdapeng.github.io/atom.xml" rel="self"/>
-  <link href="http://jiangdapeng.github.io/"/>
-  <updated>2013-10-28T20:47:01+08:00</updated>
-  <id>http://jiangdapeng.github.io/</id>
-  <author>
-    <name><![CDATA[Asuwill]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>基础数据结构与算法——排序 - Life of Asuwill</title>
+  <meta name="author" content="Asuwill">
 
   
-  <entry>
-    <title type="html"><![CDATA[基础数据结构与算法——排序]]></title>
-    <link href="http://jiangdapeng.github.io/blog/2013/10/27/basic-data-stuctures-and-algorithms-1/"/>
-    <updated>2013-10-27T22:39:00+08:00</updated>
-    <id>http://jiangdapeng.github.io/blog/2013/10/27/basic-data-stuctures-and-algorithms-1</id>
-    <content type="html"><![CDATA[<p>最近几天在重温基础的数据结构和算法，比如基础的排序算法，以及动态规划的应用，也慢慢的在博客上写一个基础的系列吧，作为自己温习的记录。</p>
+  <meta name="description" content="最近几天在重温基础的数据结构和算法，比如基础的排序算法，以及动态规划的应用，也慢慢的在博客上写一个基础的系列吧，作为自己温习的记录。 排序算法 插入排序 虽然插入排序的时间复杂度期望是O（n2)，但是具有实现简单，属于原地排序，并且是稳定排序的特点。之所以将其叫做插入排序，是因为， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jiangdapeng.github.io/blog/2013/10/27/basic-data-stuctures-and-algorithms-1/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Life of Asuwill" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45001228-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Life of Asuwill</a></h1>
+  
+    <h2>main=0</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jiangdapeng.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/categories/tech/">技术</a></li>
+  <li><a href="/blog/categories/life/">生活</a></li>
+  <li><a href="/blog/categories/random/">梦游</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">基础数据结构与算法——排序</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-27T22:39:00+08:00" pubdate data-updated="true">Oct 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>最近几天在重温基础的数据结构和算法，比如基础的排序算法，以及动态规划的应用，也慢慢的在博客上写一个基础的系列吧，作为自己温习的记录。</p>
 
 <h2>排序算法</h2>
 
@@ -403,568 +490,164 @@
 
 <p class='post-footer'>原文地址：<a href='http://jiangdapeng.github.io/blog/2013/10/27/basic-data-stuctures-and-algorithms-1/'>http://jiangdapeng.github.io/blog/2013/10/27/basic-data-stuctures-and-algorithms-1/</a><br/>Written by <a href='http://jiangdapeng.github.io'>Asuwill</a>&nbsp;posted at <a href='http://jiangdapeng.github.io'>http://jiangdapeng.github.io</a><br/>版权声明：自由转载-非商用-非衍生-保持署名|<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
 
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[PAT-1011-1015-题解]]></title>
-    <link href="http://jiangdapeng.github.io/blog/2013/10/22/pat-1011-1015-solutions/"/>
-    <updated>2013-10-22T21:08:00+08:00</updated>
-    <id>http://jiangdapeng.github.io/blog/2013/10/22/pat-1011-1015-solutions</id>
-    <content type="html"><![CDATA[<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1011" title="1011">1011. World Cup Betting (20)</a></h2>
 
-<h3>题意</h3>
+<span class="byline author vcard">Posted by <span class="fn">Asuwill</span></span>
 
-<p>赌博，怎么猜硬的最多</p>
+      
 
-<h3>思路</h3>
 
-<p>简单题，选出每个比赛投注投哪个盈利最大即可</p>
 
-<p class='post-footer'>原文地址：<a href='http://jiangdapeng.github.io/blog/2013/10/22/pat-1011-1015-solutions/'>http://jiangdapeng.github.io/blog/2013/10/22/pat-1011-1015-solutions/</a><br/>Written by <a href='http://jiangdapeng.github.io'>Asuwill</a>&nbsp;posted at <a href='http://jiangdapeng.github.io'>http://jiangdapeng.github.io</a><br/>版权声明：自由转载-非商用-非衍生-保持署名|<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
 
-]]></content>
-  </entry>
+
+
+
+
   
-  <entry>
-    <title type="html"><![CDATA[PAT 1001-1010 题解]]></title>
-    <link href="http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions/"/>
-    <updated>2013-10-20T09:45:00+08:00</updated>
-    <id>http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions</id>
-    <content type="html"><![CDATA[<h2>前言</h2>
 
-<p>PAT 是浙江大学搞出来的一个编程（<strong>P</strong>rogramming）能力（<strong>A</strong>bility）测试（<strong>T</strong>est），在姥姥的大力推广下，目前也逐渐走上了正道，详细介绍可以直接到官网查看 <a href="http://pat.zju.edu.cn/" title="PAT官方网站">http://pat.zju.edu.cn/</a></p>
 
-<p>我断断续续也将上面的题目做得差不多了，想来也应该总结一下，算是给自己一个交代。题解大致的形式将会是每10个（或者少于10个）题目一篇博文，对每个题目而言，会简述题目大意，然后是思路整理，然后是代码链接。我已经完成的题目的代码都在github上，<a href="https://github.com/jiangdapeng/pat" title="pat 源代码">请戳我</a></p>
+<time datetime="2013-10-27T22:39:00+08:00" pubdate data-updated="true">Oct 27<span>th</span>, 2013</time>
+      
 
-<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1001" title="1001. A+B Format (20)">1001. A+B Format (20)</a></h2>
-
-<h3>题意</h3>
-
-<p>按照给定的格式输出两个整数的和：即每三位数一组用逗号分隔，例如 <code>999991</code> 就应该输出为 <code>999,991</code></p>
-
-<h3>思路</h3>
-
-<p>简单题，可以将和每次三位取出（即按照<code>1000进制</code>），然后再从高位开始输出即可，注意处理负数，中间合适的位置加上<code>,</code>
-主要代码如下：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="kt">void</span> <span class="n">format</span><span class="p">(</span><span class="kt">int</span>  <span class="n">n</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="kt">bool</span> <span class="n">neg</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>    <span class="n">neg</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="n">n</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vi</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">do</span>
-</span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>    <span class="n">vi</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">1000</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">n</span> <span class="o">/=</span> <span class="mi">1000</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">!=</span><span class="mi">0</span><span class="p">);</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">neg</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;-&quot;</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">vi</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-</span><span class='line'>  <span class="n">vi</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">vi</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
-</span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">top</span> <span class="o">=</span> <span class="n">vi</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-</span><span class='line'>    <span class="n">vi</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;,%03d&quot;</span><span class="p">,</span><span class="n">top</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>
-完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1001.%20A%2BB%20Format%20(20).cpp" title="1001">请戳我</a></p>
-
-<!--more-->
-
-
-<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1002" title="1002. A+B for Polynomials (25)">1002. A+B for Polynomials (25)</a></h2>
-
-<h3>题意</h3>
-
-<p>求两个多项式的和，<code>a</code> 和 <code>b</code> 都以 <code>K N1 aN1 N2 aN2 ... NK aNK</code>的形式表示，其中 <code>K</code> 表示多项式中中非零项的个数，<code>Ni</code> 和 <code>aNi</code> 分别表示指数和系数</p>
-
-<h3>思路</h3>
-
-<p>类似于归并的思想，从高到低将指数相同的项的系数加起来，如果某指数项只在一个数中有，直接保留在结果里即可，需要注意的是如果系数加起来为0，这一项就不能放进结果。
-核心代码：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-</pre></td><td class='code'><pre><code class='c++'><span class='line'>  <span class="c1">// p1+p1</span>
-</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="n">Poly</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="n">Poly</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">vi1</span> <span class="o">=</span> <span class="n">p1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="n">Poly</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">vi2</span> <span class="o">=</span> <span class="n">p2</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-</span><span class='line'>  <span class="k">while</span><span class="p">((</span><span class="n">vi1</span> <span class="o">!=</span> <span class="n">p1</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">vi2</span><span class="o">!=</span> <span class="n">p2</span><span class="p">.</span><span class="n">end</span><span class="p">()))</span>
-</span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">vi1</span><span class="o">-&gt;</span><span class="n">exp</span> <span class="o">==</span> <span class="n">vi2</span><span class="o">-&gt;</span><span class="n">exp</span><span class="p">)</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>      <span class="n">tmp</span><span class="p">.</span><span class="n">exp</span> <span class="o">=</span> <span class="n">vi1</span><span class="o">-&gt;</span><span class="n">exp</span><span class="p">;</span>
-</span><span class='line'>      <span class="n">tmp</span><span class="p">.</span><span class="n">coe</span> <span class="o">=</span> <span class="n">vi1</span><span class="o">-&gt;</span><span class="n">coe</span> <span class="o">+</span> <span class="n">vi2</span><span class="o">-&gt;</span><span class="n">coe</span><span class="p">;</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">tmp</span><span class="p">.</span><span class="n">coe</span> <span class="o">!=</span><span class="mi">0</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>
-</span><span class='line'>      <span class="o">++</span><span class="n">vi1</span><span class="p">;</span>
-</span><span class='line'>      <span class="o">++</span><span class="n">vi2</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">vi1</span><span class="o">-&gt;</span><span class="n">exp</span> <span class="o">&gt;</span> <span class="n">vi2</span><span class="o">-&gt;</span><span class="n">exp</span><span class="p">)</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>      <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">*</span><span class="n">vi1</span><span class="p">);</span>
-</span><span class='line'>      <span class="o">++</span><span class="n">vi1</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">else</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>      <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">*</span><span class="n">vi2</span><span class="p">);</span>
-</span><span class='line'>      <span class="o">++</span><span class="n">vi2</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="n">vi1</span> <span class="o">!=</span> <span class="n">p1</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
-</span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>    <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">*</span><span class="n">vi1</span><span class="p">);</span>
-</span><span class='line'>    <span class="o">++</span><span class="n">vi1</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="n">vi2</span> <span class="o">!=</span> <span class="n">p2</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
-</span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>    <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">*</span><span class="n">vi2</span><span class="p">);</span>
-</span><span class='line'>    <span class="o">++</span><span class="n">vi2</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1002.%20A%2BB%20for%20Polynomials%20(25).cpp" title="1002">请戳我</a></p>
-
-<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1003" title="pat 1003">1003. Emergency (25)</a></h2>
-
-<h3>题意</h3>
-
-<p>给定城市之间的道路距离，以及每个城市的营救队的人数，求从城市 <code>c1</code> 到 <code>c2</code>的最短路径的条数，以及沿途能够召集的最大人数。</p>
-
-<h3>思路</h3>
-
-<p>典型的最短路径题，采用Dijkstra算法，但是这里不仅仅是找出一条最短路径，而是要计算最短路径的条数，并且需要统计沿途能够召集的最大人数。能够召集的人数没什么问题，只需要在最短路径的基础上加上一个人数的比较，<code>callup[c]</code>表示达到<code>城市c</code>的时候能够召集的最大人数。用<code>count_path[c]</code>表示到达<code>城市c</code>的最短路径的条数。</p>
-
-<ol>
-<li>如果 <code>dist[c] + edge[c,adj] &lt; dist[adj]</code> 则  <code>dist[adj] = dist[c] + edge[c,adj]; count_path[adj] = count_path[c]； callup[adj] = callup[c] + people[adj]</code></li>
-<li>如果 <code>dist[c] + edge[c,adj] == dist[adj]</code> 也就是有多条距离相同的路径到达城市<code>adj</code>，这个时候 <code>count_path[adj] = count_path[adj] + count_path[c]; callup[adj] = max { callup[adj], callup[c] + people[adj] }</code></li>
-</ol>
-
-
-<p>代码结构：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='c++'><span class='line'>  <span class="c1">// start from start city</span>
-</span><span class='line'>  <span class="n">dist</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">count</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="c1">// one shortest path from start to start</span>
-</span><span class='line'>  <span class="n">callup</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="n">start</span><span class="p">];</span>
-</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">city</span> <span class="o">=</span> <span class="n">nearest_city</span><span class="p">();</span>
-</span><span class='line'>    <span class="n">visited</span><span class="p">[</span><span class="n">city</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">city</span> <span class="o">==</span> <span class="n">end</span><span class="p">)</span>
-</span><span class='line'>      <span class="k">break</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">update_neighbor</span><span class="p">(</span><span class="n">city</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>nearest_city</code>，可以通过<code>priority_queue</code>最小堆实现，我当时用了线性遍历查找，因为测试数据小，也能过。</p>
-
-<p>完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1003.%20Emergency%20(25).cpp" title="1003">请戳我</a></p>
-
-<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1004" title="1004">1004. Counting Leaves (30)</a></h2>
-
-<h3>题意</h3>
-
-<p>统计一个家谱树中没有孩子的成员，也就是叶子节点的个数，题目要求按层输出每一层没有孩子的成员
-输入：</p>
-
-<blockquote><p>N M</p>
-
-<p>ID k ID[1] ID[2] &hellip; ID[k]</p>
-
-<p>&hellip;</p></blockquote>
-
-<p>其中 <code>N</code>是总结点树，<code>M</code>是非叶子节点数目，接下来 M 行每一行都是 节点号 孩子个数 孩子编号列表</p>
-
-<h3>思路</h3>
-
-<p>输入之后构成一个图（一棵树），使用矩阵或者邻接链表都行：
-类似于</p>
-
-<p>编号 孩子列表</p>
-
-<p>01  02  03</p>
-
-<p>02  04</p>
-
-<p>03  05</p>
-
-<p>从根开始采用广度优先遍历，统计每一层没有孩子的节点即可，具体操作核心代码</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="k">struct</span> <span class="n">Node</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">level</span><span class="p">;</span>
-</span><span class='line'><span class="p">};</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">count</span><span class="p">[</span><span class="n">MAX_NODE</span><span class="p">];</span>
-</span><span class='line'><span class="n">queue</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
-</span><span class='line'><span class="c1">//...</span>
-</span><span class='line'><span class="n">Node</span> <span class="n">root</span><span class="p">;</span>
-</span><span class='line'><span class="n">root</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span><span class='line'><span class="n">root</span><span class="p">.</span><span class="n">level</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span><span class='line'><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
-</span><span class='line'><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="n">Node</span> <span class="n">node</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
-</span><span class='line'>  <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">node</span> <span class="n">has</span> <span class="n">no</span> <span class="n">child</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>      <span class="n">count</span><span class="p">[</span><span class="n">node</span><span class="p">.</span><span class="n">level</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="k">else</span>
-</span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>      <span class="k">for</span> <span class="n">child</span> <span class="n">of</span> <span class="n">node</span>
-</span><span class='line'>      <span class="p">{</span>
-</span><span class='line'>          <span class="n">Node</span> <span class="n">c</span><span class="p">;</span>
-</span><span class='line'>          <span class="n">c</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">child</span>
-</span><span class='line'>          <span class="n">c</span><span class="p">.</span><span class="n">level</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="n">level</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-</span><span class='line'>          <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1005" title="1005">1005. Spell It Right (20)</a></h2>
-
-<h3>题意</h3>
-
-<p>输出一个数<code>N</code>的各位数字的和，但是和的每一位都需要用对应的英语输出。例如，输入12345 算出和是15，则输出 one five。需要注意的是<code>N</code>的范围是<code>[0,10^100]</code></p>
-
-<h3>思路</h3>
-
-<p>简单题，数字到英文的映射可以直接用数组<code>char* i2eng[] = {"zero","one",..., "nine"}</code>，使用字符串接收输入，然后求和就行了，然后再将每一位对应输出即可。</p>
-
-<p>完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1005.%20Spell%20It%20Right%20/(20/">请戳我</a>.cpp &ldquo;1005&rdquo;)</p>
-
-<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1006" title="1006">1006. Sign In and Sign Out (25)</a></h2>
-
-<h3>题意</h3>
-
-<p>根据 签到以及离开的记录，找出第一个来以及最后一个走的人</p>
-
-<h3>思路</h3>
-
-<p>简单的题，遍历所有记录，分别记住签到最早的人以及离开最晚的人即可，连排序都用不上</p>
-
-<p>完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1006.%20Sign%20In%20and%20Sign%20Out%20(\25).cpp" title="1006">请戳我</a></p>
-
-<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1007" title="1007">1007. Maximum Subsequence Sum (25)</a></h2>
-
-<h3>题意</h3>
-
-<p>给定一个整数序列，求其中的一个连续子序列，该子序列中元素的和是所有连续子序列中最大的，输出和以及序列开始、结束的元素。题目规定，如果序列里的值都是负数，则最大和定义为<code>0</code>，输出整个序列开始、结束元素。</p>
-
-<h3>思路</h3>
-
-<p>非常经典的一个题目，记得当年算法基础教材里面就讲了这道题目，而且是讲了三个还是四个方法，复杂度从最高O(N<sup>3</sup>)到最低O(N)，当真把我给镇住了！这算法带来的效率提高真不是一般厉害。
-O(N）复杂度的算法核心如下</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="n">max_sum</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-</span><span class='line'><span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="n">sum</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</span><span class='line'>  <span class="n">sum</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">sum</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
-</span><span class='line'>  <span class="n">max_sum</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">max_sum</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>解释起来也比较好理解：</p>
-
-<ol>
-<li>如果加上当前元素后，<code>sum &lt; 0</code>，那么得到当前和的这一序列肯定不属于所求序列的一部分，因为加上一个负值，和肯定是变小的。因此将sum重置为<code>0</code>，接下去继续找；</li>
-<li>每一步都需要将最新的<code>sum</code>与已知的<code>max_sum</code>比较，如果新的和已经更大了，则更新<code>max_sum</code>的值。</li>
-</ol>
-
-
-<p>当然，要完成这道题，代码要稍微复杂点，比如要注意序列里是否有非负数出现，在更新<code>sum 或者 max_sum</code>的时候，同时需要记住对应的序列开始结束的位置。
-完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1007.%20Maximum%20Subsequence%20Sum%20(25).cpp" title="1007">请戳我</a></p>
-
-<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1008" title="1008">1008. Elevator (20)</a></h2>
-
-<h3>题意</h3>
-
-<p>给定一串电梯的请求序列，计算电梯完成所有请求所需要的时间。已知电梯上移一层楼需要 6s，下移一层需要 4s，每次停下来需要花 5s。</p>
-
-<h3>思路</h3>
-
-<p>就是简单的模拟题，按照给定的顺序模拟电梯运行，计算相应的时间花费。</p>
-
-<p>完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1008.%20Elevator%20(20).cpp" title="1008">请戳我</a></p>
-
-<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1009" title="1009">1009. Product of Polynomials (25)</a></h2>
-
-<h3>题意</h3>
-
-<p>计算多项式的乘积</p>
-
-<h3>思路</h3>
-
-<p>前面有一道题<a href="http://pat.zju.edu.cn/contests/pat-a-practise/1002" title="1002. A+B for Polynomials (25)">1002. A+B for Polynomials (25)</a> 已经做了多项式的加法操作，再定义一个多项式与单项相乘的方法，然后将一个多项式的每一个项与另外一个多项式相乘，将结果再求和即可。
-完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1009.%20Product%20of%20Polynomials%20(25).cpp" title="1009">请戳我</a></p>
-
-<h2><a href="http://pat.zju.edu.cn/contests/pat-a-practise/1010" title="1010">1010. Radix (25)</a></h2>
-
-<h3>题意</h3>
-
-<p>给定两个数以及其中一个数的进制，求是否存在一个进制使得另外一个数与该数的值相等。两个数的都是由<code>{0-9}</code> 以及 <code>{a-z}</code>组成</p>
-
-<h3>思路</h3>
-
-<p>要比较不同进制的数，最好是将其都变成十进制数来比较，因此需要一个将其他进制转换为十进制的函数。有了这个函数之后，将已知进制的数转为10进制数，然后看尝试给另外一个数设置进制，然后转为10进制，判断结果是否一致。设置进制的起始值具体看给定的数中出现的字母，比如出现的最大数是<code>a</code>，也就是至少是11进制，以此类推，没有上限。</p>
-
-<ol>
-<li>如果算出的结果相等，则结束，给出答案</li>
-<li>如果偏小，则测试下一个进制</li>
-<li>如果偏大，则结束，输出 Impossible</li>
-</ol>
-
-
-<p>这个做法有一个问题，就是可能会超时，想想，如果给定 <code>A = zzzzzzz，是37进制</code>,而<code>B = 10</code>，那么从二进制开始尝试，需要尝试的次数就非常多，很可能会超时。因此，我们不能按顺序递增进制来猜，必须跳跃性地猜。可以想到的办法就是二分法。需要尝试的基的上限是 A的值。稍微可以优化一下的是，如果B只有一位，那么值其实是确定的，这个时候可以快速判定是否存在解，而不用按照前面的方式傻乎乎的计算很多次。</p>
-
-<p>完整代码<a href="https://github.com/jiangdapeng/pat/blob/master/Advanced%20Level/1010.%20Radix%20(25).cpp" title="1010">请戳我</a></p>
-
-<p>【PAT 1001-1010 完】</p>
-
-<p class='post-footer'>原文地址：<a href='http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions/'>http://jiangdapeng.github.io/blog/2013/10/20/pat-1001-1010-solutions/</a><br/>Written by <a href='http://jiangdapeng.github.io'>Asuwill</a>&nbsp;posted at <a href='http://jiangdapeng.github.io'>http://jiangdapeng.github.io</a><br/>版权声明：自由转载-非商用-非衍生-保持署名|<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
-
-]]></content>
-  </entry>
+<span class="categories">
   
-  <entry>
-    <title type="html"><![CDATA[markdown 常用语法]]></title>
-    <link href="http://jiangdapeng.github.io/blog/2013/10/08/markdown-syntax/"/>
-    <updated>2013-10-08T09:44:00+08:00</updated>
-    <id>http://jiangdapeng.github.io/blog/2013/10/08/markdown-syntax</id>
-    <content type="html"><![CDATA[<h1>前言</h1>
-
-<h2>为什么我会出现在标签 pat 下</h2>
-
-<p>说起来，是因为，我写第一篇pat题解，用 <code>bundle exec rake generate</code> 的时候，报错了</p>
-
-<blockquote><p>Liquid Exception: comparison of Array with Array failed in page</p></blockquote>
-
-<p>Google 了一下，有人说是“每个tag都只使用一次的时候”，这个问题就会出现。我测试了一下，还果真是如此，为了暂时解决这个问题，我只好把pat标签在这篇post里也应用一下了。</p>
-
-<h2>标题</h2>
-
-<h1>这是 H1</h1>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\# 这是 H1</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>这是 H2</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\## 这是 H2</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>这是 H3</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\### 这是 H3</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>这是 H4</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>\#### 这是 H4</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>区块引用</h2>
-
-<blockquote><p>区块引用1</p>
-
-<blockquote><p>区块引用2</p></blockquote>
-
-<p>回到引用1</p>
-
-<h2>这是一个标题</h2>
-
-<ol>
-<li>列表1</li>
-<li>列表2</li>
-</ol>
-
-
-<p>给出一些例子代码：</p>
-
-<p>  return shell_exec(&ldquo;echo $input | $markdown_script&rdquo;);</p></blockquote>
-
-<h2>列表</h2>
-
-<h3>无序列表</h3>
-
-<ul>
-<li>师叔</li>
-<li>师太</li>
-<li>春哥</li>
-<li>马老师</li>
-<li>主席</li>
-<li>女王大人</li>
-<li>亲王大人</li>
-</ul>
-
-
-<h3>有序列表</h3>
-
-<ol>
-<li>师叔女人1号</li>
-<li>师叔女人2号</li>
-<li>师叔女人3号</li>
-<li>。。。</li>
-</ol>
-
-
-<h2>代码区块</h2>
-
-<p>这是普通的段落</p>
-
-<pre><code>这是代码块（行首4个空格或者1个制表符）
-</code></pre>
-
-<h2>区段元素</h2>
-
-<p class='post-footer'>原文地址：<a href='http://jiangdapeng.github.io/blog/2013/10/08/markdown-syntax/'>http://jiangdapeng.github.io/blog/2013/10/08/markdown-syntax/</a><br/>Written by <a href='http://jiangdapeng.github.io'>Asuwill</a>&nbsp;posted at <a href='http://jiangdapeng.github.io'>http://jiangdapeng.github.io</a><br/>版权声明：自由转载-非商用-非衍生-保持署名|<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
-
-]]></content>
-  </entry>
+    <a class='category' href='/blog/categories/tech/'>tech</a>
   
-  <entry>
-    <title type="html"><![CDATA[江大鹏的第一篇博客]]></title>
-    <link href="http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog/"/>
-    <updated>2013-10-07T20:12:00+08:00</updated>
-    <id>http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog</id>
-    <content type="html"><![CDATA[<p class='post-footer'>原文地址：<a href='http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog/'>http://jiangdapeng.github.io/blog/2013/10/07/first-octopress-blog/</a><br/>Written by <a href='http://jiangdapeng.github.io'>Asuwill</a>&nbsp;posted at <a href='http://jiangdapeng.github.io'>http://jiangdapeng.github.io</a><br/>版权声明：自由转载-非商用-非衍生-保持署名|<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+</span>
 
-]]></content>
-  </entry>
+
+    </p>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/10/22/pat-1011-1015-solutions/" title="Previous Post: PAT-1011-1015-题解">&laquo; PAT-1011-1015-题解</a>
+      
+      
+    </p>
+    
+      <div class="sharing">
   
-</feed>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jiangdapeng.github.io/blog/2013/10/27/basic-data-stuctures-and-algorithms-1/" data-via="" data-counturl="http://jiangdapeng.github.io/blog/2013/10/27/basic-data-stuctures-and-algorithms-1/" >Tweet</a>
+  
+  
+  
+  
+    <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share?uid=1849241" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1347964657841494" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<p></p>
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1849241"></script>
+<!-- UY END -->
+  
+</div>
+
+    
+
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>关于博主</h1>
+  <p>想着是风一样的男子，其实是疯男子</p>
+</section>
+<section>
+  <h1>近期文章</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/10/27/basic-data-stuctures-and-algorithms-1/">基础数据结构与算法——排序</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/22/pat-1011-1015-solutions/">PAT-1011-1015-题解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/20/pat-1001-1010-solutions/">PAT 1001-1010 题解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/markdown-syntax/">markdown 常用语法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/07/first-octopress-blog/">江大鹏的第一篇博客</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+<section>
+  <h1>标签云</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 70%" href="/tags/algorithm/">algorithm</a>
+<a style="font-size: 70%" href="/tags/c-plus-plus/">c++</a>
+<a style="font-size: 70%" href="/tags/markdown/">markdown</a>
+<a style="font-size: 180%" href="/tags/pat/">pat</a>
+
+  </ul>
+</section>
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Asuwill -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  - <span class="credit">Theme by <a href="http://www.gehaxelt.in">Gehaxelt</a></span>
+  <span class="credit">and <a href="http://www.it-solutions-neef.de">IT Solutions Neef</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
