@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: python | Life of Asuwill]]></title>
+  <link href="http://jiangdapeng.github.io/tags/python/atom.xml" rel="self"/>
+  <link href="http://jiangdapeng.github.io/"/>
+  <updated>2014-02-17T22:42:27+08:00</updated>
+  <id>http://jiangdapeng.github.io/</id>
+  <author>
+    <name><![CDATA[Asuwill]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[说一说python中的yield]]></title>
+    <link href="http://jiangdapeng.github.io/blog/2014/02/16/python-yield/"/>
+    <updated>2014-02-16T21:41:00+08:00</updated>
+    <id>http://jiangdapeng.github.io/blog/2014/02/16/python-yield</id>
+    <content type="html"><![CDATA[<h2>yield是什么？</h2>
+
+<h2>yield能做什么？</h2>
+
+<h2>如何用yield</h2>
+
+<h2>参考文献</h2>
+
+<ol>
+<li><p>提高你的Python: 解释‘yield’和‘Generators（生成器）
+<a href="http://www.oschina.net/translate/improve-your-python-yield-and-generators-explained">http://www.oschina.net/translate/improve-your-python-yield-and-generators-explained</a></p></li>
+<li><p>python yield浅析
+<a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/">https://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/</a></p></li>
+<li><p>python关键字yield的解释
+<a href="https://pyzh.readthedocs.org/en/latest/the-python-yield-keyword-explained.html">https://pyzh.readthedocs.org/en/latest/the-python-yield-keyword-explained.html</a></p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

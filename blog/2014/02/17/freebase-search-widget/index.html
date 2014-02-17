@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>一分钟搞定搜索提示——freebase初体验 - Life of Asuwill</title>
+  <meta name="author" content="Asuwill">
+
+  
+  <meta name="description" content="不相信？看完这篇文章，不管你信不信，反正我是信了！ 搜索提示是什么东西，相信大家都用过google或者百度或者其他搜索引擎，当你在搜索框中敲入关键字的时候，通常会有一个搜索词推荐列表，如在google中搜索freebase： 这个东西真的能在一分钟内搞定？我的回答是“差不多吧”。所谓差不多吧， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jiangdapeng.github.io/blog/2014/02/17/freebase-search-widget/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Life of Asuwill" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45001228-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Life of Asuwill</a></h1>
+  
+    <h2>main=0</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jiangdapeng.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/categories/tech/">技术</a></li>
+  <li><a href="/blog/categories/life/">生活</a></li>
+  <li><a href="/blog/categories/random/">梦游</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">一分钟搞定搜索提示——freebase初体验</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-17T19:58:00+08:00" pubdate data-updated="true">Feb 17<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>不相信？看完这篇文章，不管你信不信，反正我是信了！</p>
+
+<p>搜索提示是什么东西，相信大家都用过google或者百度或者其他搜索引擎，当你在搜索框中敲入关键字的时候，通常会有一个搜索词推荐列表，如在google中搜索<code>freebase</code>：</p>
+
+<p><img src="http://blog-imgs.qiniudn.com/google.JPG" alt="" /></p>
+
+<p>这个东西真的能在一分钟内搞定？我的回答是“差不多吧”。所谓差不多吧，实际上就是还有点差距。差距在哪里就等你自己做出来慢慢去比较。下面正式开始实现了，新建一个index.html文件，内容如下：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;head&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;title&gt;</span> search suggest <span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;link</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;https://www.gstatic.com/freebase/suggest/4_2/suggest.min.css&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;https://www.gstatic.com/freebase/suggest/4_2/suggest.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#search&quot;</span><span class="p">).</span><span class="nx">suggest</span><span class="p">({</span>
+</span><span class='line'>          <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;your-api-key-of-freebase&#39;</span><span class="p">,</span>
+</span><span class='line'>          <span class="nx">lang</span><span class="o">:</span><span class="s1">&#39;zh&#39;</span><span class="p">});</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>        <span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;body&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;search&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;/input&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/body&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>好了，一切准备就绪了，请用你最喜爱的浏览器打开这个文件，在出现的搜索框里输入一些关键字试试，就比如<code>freebase</code>吧，如果你还不知道这是个什么。现在你相信了我说的没有？</p>
+
+<p>当然，这都是用的别人的现成的东西构建的，算不上什么真本事。但是，你也可能听到过另外一句话，&#8221;不要重复造轮子”，有些时候就应该采用拿来主义，把他人的东西纳为己用，这是对别人成果的肯定！所以我今天想在这里推荐的就是别人做好的东西，做的好东西，那就是——<strong>freebase</strong>。刚才所做的只是一个基于<code>freebase</code>的<code>jquery插件</code>，叫做<a href="https://developers.google.com/freebase/v1/search-widget"><code>freebase search widget</code></a>。</p>
+
+<p><code>freebase</code>是<code>google knowledge graph</code>的基础，通俗来说，它是一堆事实的网络集合。它‘知道’<code>神偷奶爸</code>是一部动画电影，哪个公司发行的，哪年上映的，还知道这部电影的另外一个名字叫做<code>卑鄙的我</code>。在这里，存储的不再只是纯粹的字符串，这些字符串代表了某个本体，具有一定的属性。更详细的介绍可以参见freebase<a href="http://www.freebase.com/">官网</a>。</p>
+
+<p>今天这个作为一个探索freebase的开始，后续我将继续深入了解freebase及其它所代表的新一代基于知识的搜索引擎。<p class='post-footer'>原文地址：<a href='http://jiangdapeng.github.io/blog/2014/02/17/freebase-search-widget/'><a href="http://jiangdapeng.github.io/blog/2014/02/17/freebase-search-widget/">http://jiangdapeng.github.io/blog/2014/02/17/freebase-search-widget/</a></a><br/>Written by <a href='http://jiangdapeng.github.io'>Asuwill</a>&nbsp;posted at <a href='http://jiangdapeng.github.io'><a href="http://jiangdapeng.github.io">http://jiangdapeng.github.io</a></a><br/>版权声明：自由转载-非商用-非衍生-保持署名|<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Asuwill</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-17T19:58:00+08:00" pubdate data-updated="true">Feb 17<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tech/'>tech</a>
+  
+</span>
+
+
+    </p>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/02/16/python-yield/" title="Previous Post: 说一说python中的yield">&laquo; 说一说python中的yield</a>
+      
+      
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jiangdapeng.github.io/blog/2014/02/17/freebase-search-widget/" data-via="" data-counturl="http://jiangdapeng.github.io/blog/2014/02/17/freebase-search-widget/" >Tweet</a>
+  
+  
+  
+  
+    <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share?uid=1849241" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1347964657841494" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<p></p>
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1849241"></script>
+<!-- UY END -->
+  
+</div>
+
+    
+
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>关于博主</h1>
+  <p>想着是风一样的男子，其实是疯男子</p>
+</section>
+<section>
+  <h1>近期文章</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/17/freebase-search-widget/">一分钟搞定搜索提示——freebase初体验</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/python-yield/">说一说python中的yield</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/27/basic-data-structures-and-algorithms-1/">基础数据结构与算法——排序</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/22/pat-1011-1015-solutions/">PAT-1011-1015-题解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/20/pat-1001-1010-solutions/">PAT 1001-1010 题解</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+<section>
+  <h1>标签云</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 70%" href="/tags/algorithm/">algorithm</a>
+<a style="font-size: 70%" href="/tags/c-plus-plus/">c++</a>
+<a style="font-size: 70%" href="/tags/entity/">entity</a>
+<a style="font-size: 70%" href="/tags/freebase/">freebase</a>
+<a style="font-size: 70%" href="/tags/language/">language</a>
+<a style="font-size: 70%" href="/tags/markdown/">markdown</a>
+<a style="font-size: 180%" href="/tags/pat/">pat</a>
+<a style="font-size: 70%" href="/tags/python/">python</a>
+<a style="font-size: 70%" href="/tags/search/">search</a>
+
+  </ul>
+</section>
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Asuwill -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  - <span class="credit">Theme by <a href="http://www.gehaxelt.in">Gehaxelt</a></span>
+  <span class="credit">and <a href="http://www.it-solutions-neef.de">IT Solutions Neef</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
