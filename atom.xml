@@ -4,7 +4,7 @@
   <title><![CDATA[Life of Asuwill]]></title>
   <link href="http://jiangdapeng.github.io/atom.xml" rel="self"/>
   <link href="http://jiangdapeng.github.io/"/>
-  <updated>2014-02-17T22:42:27+08:00</updated>
+  <updated>2014-03-07T11:26:24+08:00</updated>
   <id>http://jiangdapeng.github.io/</id>
   <author>
     <name><![CDATA[Asuwill]]></name>
@@ -12,6 +12,88 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[八皇后有多少种解？]]></title>
+    <link href="http://jiangdapeng.github.io/blog/2014/03/07/eight-queen-problem/"/>
+    <updated>2014-03-07T10:10:00+08:00</updated>
+    <id>http://jiangdapeng.github.io/blog/2014/03/07/eight-queen-problem</id>
+    <content type="html"><![CDATA[<h3>什么是八皇后问题？</h3>
+
+<blockquote><p>八皇后问题，是一个古老而著名的问题，是回溯算法的典型案例。该问题是国际西洋棋棋手马克斯·贝瑟尔于1848年提出：在8X8格的国际象棋上摆放八个皇后，使其不能互相攻击，即任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。 高斯认为有76种方案。1854年在柏林的象棋杂志上不同的作者发表了40种不同的解，后来有人用图论的方法解出92种结果。计算机发明后，有多种方法可以解决此问题。——【百度百科】</p></blockquote>
+
+<p>如下图所示的摆放方式就是一个满足要求的方案：
+<img src="http://c.hiphotos.baidu.com/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=493dc882f9198618554ae7d62b844516/4a36acaf2edda3cc86fff5c300e93901203fb80e7becba06.jpg" alt="" /></p>
+
+<h3>八皇后有多少种解？</h3>
+
+<p>前面引自百科的资料里也有提到，高斯认为有76种方案，还有人解出有92种方案。到底有多少种方案呢？高斯这么厉害的角色也会出错吗？我今天就想用一小段代码来求解这个问题。不过顺便说一句，人家高斯当年计算可没有计算机帮忙啊，能给出76种方案已经是非常人所能匹敌的。</p>
+
+<h3>思路</h3>
+
+<p>总思想：暴力破解</p>
+
+<p>步骤一：罗列所有可能的摆放方式；</p>
+
+<p>步骤二：检测某种摆放方式是否满足要求；</p>
+
+<h4>步骤一</h4>
+
+<p>方式一：罗列摆放方式，第一感觉需要一个矩阵来存储一种状态，因为棋盘是个8 * 8的方格，如果用一个8 * 8的矩阵，有皇后的用1表示，没有皇后的用0，然后再判断这个矩阵是否满足任意两个皇后没有处于同一行同一列或者同一个斜线上。这种表示方式直观，但是如果要罗列这个矩阵所有可能的状态，代价就太大了。因为每个格子都有<code>2</code>种可选状态，总共有<code>64</code>个格子，那么一共有 <code>2^64</code>个状态需要判断，明显这条路是走不通了，果断换一条路吧！</p>
+
+<p>方式二：上面那种方式之所以不行，是因为我们没有充分利用限定条件。满足要求的摆放方式保证了每行每列都只有一个皇后，上面很多种罗列方式明显是不满足的。既然每一行都有一个皇后，那么我们用一个数组<code>column_index[8]</code>来存储每一行的皇后所在的列下标。也就是说 <code>column_index[i]</code>表示第<code>i</code>行的皇后所在的列。<code>column_index</code>如何填充呢？，只需看一下上面的图就知道，数组中必然包含<code>0~7</code>八个数字，而且每个数字必然出现一次，也就是说，一个状态就是<code>0~7</code>的一个排列。比如，上面八皇后的摆放用这种方式表示就是:</p>
+
+<pre><code>column_index = [5, 1, 6, 0, 3, 7, 4, 2]
+</code></pre>
+
+<p>那么有多少种排列就有多少种状态需要判断，很简单，8个不同数字的排列数有<code>8！=40320</code>种，也就是说我们将需要判断的状态从 <code>2^64</code>降到了四万多。好，四万多个状态对于计算机来说判断就很快了。进入下一步吧。</p>
+
+<h4>步骤二 判断是否合法</h4>
+
+<p>上面的罗列方式已经确保8皇后不在同一行不在同一列，因此只需要判断是否存在两个皇后在同一个对角线，而这个只需要判断 <code>abs(i - j) == abs(column_index[i] - column_index[j])</code></p>
+
+<p>好最后看一下代码吧</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span>  <span class="nn">itertools</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">is_valid_8_quene</span><span class="p">(</span><span class="n">col_index</span><span class="p">):</span>
+</span><span class='line'>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+</span><span class='line'>      <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">)</span> <span class="o">==</span> <span class="nb">abs</span><span class="p">(</span><span class="n">col_index</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">col_index</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</span><span class='line'>        <span class="k">return</span> <span class="bp">False</span>
+</span><span class='line'>  <span class="k">return</span> <span class="bp">True</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">count_8_quene_solutions</span><span class="p">():</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span> <span class="k">if</span> <span class="n">is_valid_8_quene</span><span class="p">(</span><span class="n">p</span><span class="p">)])</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">print</span> <span class="p">(</span><span class="n">count_8_quene_solutions</span><span class="p">())</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>最后结果是多少呢？
+我不会告诉你是92的</p>
+
+<p class='post-footer'>原文地址：<a href='http://jiangdapeng.github.io/blog/2014/03/07/eight-queen-problem/'>http://jiangdapeng.github.io/blog/2014/03/07/eight-queen-problem/</a><br/>Written by <a href='http://jiangdapeng.github.io'>Asuwill</a>&nbsp;posted at <a href='http://jiangdapeng.github.io'>http://jiangdapeng.github.io</a><br/>版权声明：自由转载-非商用-非衍生-保持署名|<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[一分钟搞定搜索提示——freebase初体验]]></title>
